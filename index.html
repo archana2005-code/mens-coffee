@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Men's Coffee - Premium craft coffee for the modern gentleman. Experience the finest beans, expertly roasted for bold flavor.">
+    <meta name="keywords" content="premium coffee, craft coffee, men's coffee, specialty coffee, coffee beans, espresso, cold brew">
+    <title>Men's Coffee | Premium Craft Coffee for the Modern Gentleman</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="coffee-cup">
+                <div class="coffee-liquid"></div>
+            </div>
+            <span>Loading...</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">
+                        <span class="logo-m">M</span>
+                        <div class="logo-coffee-bean"></div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name">Men's Coffee</span>
+                        <span class="tagline">It doesn't mean what it says</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#shop" class="nav-link">Shop</a></li>
+                    <li><a href="#collection" class="nav-link">Collection</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="nav-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                    <button class="nav-btn" id="wishlistBtn"><i class="fas fa-heart"></i><span class="badge wishlist-count">0</span></button>
+                    <button class="nav-btn" id="cartBtn"><i class="fas fa-shopping-bag"></i><span class="badge cart-count">0</span></button>
+                    <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button>
+            <div class="search-box">
+                <input type="text" placeholder="Search for premium coffee..." id="searchInput">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="search-suggestions">
+                <h4>Popular Searches</h4>
+                <div class="suggestion-tags">
+                    <span>Cold Brew</span>
+                    <span>Espresso</span>
+                    <span>Latte</span>
+                    <span>Dark Roast</span>
+                    <span>Subscription</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-empty" id="cartEmpty">
+            <i class="fas fa-shopping-bag"></i>
+            <p>Your cart is empty</p>
+            <a href="#shop" class="btn btn-primary">Browse Coffee</a>
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span class="subtotal-amount">$0.00</span>
+            </div>
+            <div class="cart-coupon">
+                <input type="text" placeholder="Coupon code" id="couponInput">
+                <button class="btn-coupon" id="applyCoupon">Apply</button>
+            </div>
+            <a href="#checkout" class="btn btn-primary btn-checkout">Checkout</a>
+            <a href="#shop" class="btn btn-secondary">Continue Shopping</a>
+        </div>
+    </div>
+
+    <!-- Wishlist Sidebar -->
+    <div class="wishlist-sidebar" id="wishlistSidebar">
+        <div class="wishlist-header">
+            <h3>Your Wishlist</h3>
+            <button class="close-wishlist" id="closeWishlist"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="wishlist-items" id="wishlistItems"></div>
+        <div class="wishlist-empty" id="wishlistEmpty">
+            <i class="fas fa-heart"></i>
+            <p>Your wishlist is empty</p>
+            <a href="#shop" class="btn btn-primary">Discover Coffee</a>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">Premium Since 2024</span>
+                    <h1>Crafted for <span class="highlight">Coffee Lovers</span></h1>
+                    <p>Experience the finest selection of hand-roasted coffee beans, sourced from the world's most exotic regions. Every cup tells a story of passion, precision, and perfection.</p>
+                    <div class="hero-buttons">
+                        <a href="#shop" class="btn btn-primary btn-lg">Shop Now</a>
+                        <a href="#collection" class="btn btn-outline btn-lg">Explore Collection</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-text">Coffee Varieties</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">25K+</span>
+                            <span class="stat-text">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-text">Countries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="coffee-cup-hero">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/coffee.jpg" alt="Premium Coffee Cup">
+                    </div>uto=compr
+                    <div class="floating-beans">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/qr.jpg" alt="Coffee Bean" class="bean bean-1">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/bean2.jpg" alt="Coffee Bean" class="bean bean-2">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/bean3.jpg" alt="Coffee Bean" class="bean bean-3">
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span>Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured section" id="featured">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Our Selection</span>
+                    <h2>Featured Products</h2>
+                    <p>Hand-picked selections from our premium coffee range</p>
+                </div>
+                <div class="products-grid" id="featuredProducts"></div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Our Promise</span>
+                    <h2>Why Choose Men's Coffee</h2>
+                    <p>Every cup represents our commitment to excellence</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Ethically Sourced</h3>
+                        <p>We partner directly with farmers across 15+ countries, ensuring fair wages and sustainable practices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-fire"></i></div>
+                        <h3>Freshly Roasted</h3>
+                        <p>Every batch is roasted to order in our state-of-the-art facility, guaranteeing peak freshness.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-award"></i></div>
+                        <h3>Premium Quality</h3>
+                        <p>Only the top 1% of beans make it through our rigorous selection process.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                        <h3>Fast Delivery</h3>
+                        <p>Free shipping on orders over $50. Your coffee arrives within 2-3 business days.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-images">
+                        <div class="about-img-main">
+                            <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/ourstory.jpg" alt="Coffee Roasting">
+                        </div>
+                        <div class="about-img-secondary">
+                            <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/qr.jpg" alt="Coffee Beans">
+                        </div>
+                        <div class="about-experience">
+                            <span class="exp-number">10+</span>
+                            <span class="exp-text">Years of Excellence</span>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <span class="section-badge">Our Story</span>
+                        <h2>The Art of Perfect Coffee</h2>
+                        <p class="about-lead">Men's Coffee was born from a simple belief: that every man deserves a moment of pure indulgence in his day. We've dedicated ourselves to crafting the perfect cup of coffee that transcends the ordinary.</p>
+                        <p>Our journey began in the highlands of Ethiopia, where we discovered our first batch of heirloom coffee beans. That moment sparked a passion that would take us across continents, from the misty mountains of Colombia to the volcanic soils of Indonesia.</p>
+                        <p>We work directly with small-scale farmers who share our vision of quality over quantity. Every bean is hand-picked at peak ripeness, processed with care, and roasted in small batches to unlock its unique flavor profile.</p>
+                        <div class="about-values">
+                            <div class="value"><i class="fas fa-check-circle"></i><span>100% Arabica Beans</span></div>
+                            <div class="value"><i class="fas fa-check-circle"></i><span>Sustainably Grown</span></div>
+                            <div class="value"><i class="fas fa-check-circle"></i><span>Small Batch Roasted</span></div>
+                            <div class="value"><i class="fas fa-check-circle"></i><span>Fair Trade Certified</span></div>
+                        </div>
+                        <a href="#collection" class="btn btn-primary">Explore Our Collection</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section class="shop section" id="shop">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Shop</span>
+                    <h2>Our Premium Collection</h2>
+                    <p>Discover the perfect roast for your taste</p>
+                </div>
+                <div class="shop-controls">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="espresso">Espresso</button>
+                        <button class="filter-tab" data-filter="latte">Latte</button>
+                        <button class="filter-tab" data-filter="cold">Cold Brew</button>
+                        <button class="filter-tab" data-filter="specialty">Specialty</button>
+                    </div>
+                    <div class="sort-select">
+                        <select id="sortProducts">
+                            <option value="default">Sort by: Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Top Rated</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="products-grid" id="shopProducts"></div>
+                <div class="load-more">
+                    <button class="btn btn-outline" id="loadMoreProducts">Load More Products</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coffee Collection -->
+        <section class="collection section" id="collection">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Collection</span>
+                    <h2>Curated Coffee Experiences</h2>
+                    <p>Explore our signature collections crafted for every mood</p>
+                </div>
+                <div class="collection-grid">
+                    <div class="collection-card large">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/dark.jpg" alt="Dark Roast Collection">
+                        <div class="collection-overlay">
+                            <span class="collection-badge">Bestseller</span>
+                            <h3>Dark Roast Collection</h3>
+                            <p>Bold, intense flavors for the adventurous palate</p>
+                            <a href="#shop" class="btn btn-white">Shop Collection</a>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/light.jpg" alt="Light Roast">
+                        <div class="collection-overlay">
+                            <h3>Light Roast</h3>
+                            <p>Delicate, fruity notes</p>
+                            <a href="#shop" class="btn btn-white-sm">Explore</a>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/medium.jpg" alt="Medium Roast">
+                        <div class="collection-overlay">
+                            <h3>Medium Roast</h3>
+                            <p>Balanced, smooth</p>
+                            <a href="#shop" class="btn btn-white-sm">Explore</a>
+                        </div>
+                    </div>
+                    <div class="collection-card wide">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/cold brew.jpg" alt="Cold Brew Collection">
+                        <div class="collection-overlay">
+                            <span class="collection-badge">New</span>
+                            <h3>Cold Brew Collection</h3>
+                            <p>Smooth, refreshing, perfect for any time</p>
+                            <a href="#shop" class="btn btn-white">Shop Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Sellers -->
+        <section class="bestsellers section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Customer Favorites</span>
+                    <h2>Best Sellers</h2>
+                    <p>The coffees our customers can't get enough of</p>
+                </div>
+                <div class="products-slider" id="bestsellersSlider"></div>
+            </div>
+        </section>
+
+        <!-- Brewing Experience -->
+        <section class="brewing section">
+            <div class="container">
+                <div class="brewing-grid">
+                    <div class="brewing-content">
+                        <span class="section-badge">Experience</span>
+                        <h2>The Perfect Brew Guide</h2>
+                        <p>Master the art of coffee brewing with our expert guidance. From grind size to water temperature, every detail matters in creating the perfect cup.</p>
+                        <div class="brewing-steps">
+                            <div class="brewing-step">
+                                <div class="step-number">01</div>
+                                <div class="step-content">
+                                    <h4>Choose Your Beans</h4>
+                                    <p>Select from our range of premium single-origin or blended coffees.</p>
+                                </div>
+                            </div>
+                            <div class="brewing-step">
+                                <div class="step-number">02</div>
+                                <div class="step-content">
+                                    <h4>Grind Fresh</h4>
+                                    <p>Grind your beans just before brewing for maximum freshness and aroma.</p>
+                                </div>
+                            </div>
+                            <div class="brewing-step">
+                                <div class="step-number">03</div>
+                                <div class="step-content">
+                                    <h4>Brew with Care</h4>
+                                    <p>Use filtered water at the right temperature for your chosen method.</p>
+                                </div>
+                            </div>
+                            <div class="brewing-step">
+                                <div class="step-number">04</div>
+                                <div class="step-content">
+                                    <h4>Savor the Moment</h4>
+                                    <p>Take time to appreciate the complex flavors and aromas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brewing-image">
+                        <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/co.jpg" alt="Coffee Brewing">
+                        <div class="brewing-video">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coffee Benefits -->
+        <section class="benefits section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-badge">Health & Wellness</span>
+                    <h2>Benefits of Premium Coffee</h2>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card"><i class="fas fa-brain"></i><h4>Mental Alertness</h4><p>Enhances cognitive function and mental focus</p></div>
+                    <div class="benefit-card"><i class="fas fa-heart"></i><h4>Heart Health</h4><p>Rich in antioxidants that support cardiovascular health</p></div>
+                    <div class="benefit-card"><i class="fas fa-dumbbell"></i><h4>Physical Performance</h4><p>Boosts metabolism and exercise endurance</p></div>
+                    <div class="benefit-card"><i class="fas fa-shield-alt"></i><h4>Disease Prevention</h4><p>May reduce risk of type 2 diabetes and liver disease</p></div>
+                    <div class="benefit-card"><i class="fas fa-smile"></i><h4>Mood Enhancement</h4><p>Natural compounds that promote well-being</p></div>
+                    <div class="benefit-card"><i class="fas fa-leaf"></i><h4>Essential Nutrients</h4><p>Contains B vitamins, manganese, and potassium</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">What We Offer</span>
+                    <h2>Our Services</h2>
+                    <p>Comprehensive coffee solutions for every need</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h3>Online Ordering</h3>
+                        <p>Browse our complete catalog and order your favorite coffees with just a few clicks. Fast, secure, and convenient.</p>
+                        <a href="#shop" class="service-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-shipping-fast"></i></div>
+                        <h3>Home Delivery</h3>
+                        <p>Fresh roasted coffee delivered straight to your door. Free shipping on orders over $50 with tracking included.</p>
+                        <span class="service-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-fire-alt"></i></div>
+                        <h3>Fresh Roasting</h3>
+                        <p>Each batch is roasted to order in our facility. Experience coffee at its absolute peak freshness.</p>
+                        <span class="service-link">Our Process <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-gift"></i></div>
+                        <h3>Gift Boxes</h3>
+                        <p>Curated gift sets perfect for any coffee lover. Beautiful packaging with customizable messages.</p>
+                        <span class="service-link">Shop Gifts <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h3>Subscription Plans</h3>
+                        <p>Never run out of coffee again. Choose your frequency and get exclusive subscriber discounts.</p>
+                        <span class="service-link">Subscribe & Save <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-building"></i></div>
+                        <h3>Corporate Orders</h3>
+                        <p>Premium coffee solutions for offices and businesses. Custom branding and bulk pricing available.</p>
+                        <span class="service-link">Contact Us <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Testimonials</span>
+                    <h2>What Our Customers Say</h2>
+                    <p>Real reviews from coffee enthusiasts</p>
+                </div>
+                <div class="testimonials-slider" id="testimonialsSlider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The Midnight Black Coffee is absolutely incredible. The depth of flavor is unlike anything I've ever tasted. This has become my morning ritual."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Customer">
+                            <div><h4>Michael Roberts</h4><span>Coffee Enthusiast</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Finally, a coffee brand that understands quality. The subscription service is perfect - fresh beans delivered right when I need them."</p>
+                        <div class="testimonial-author">
+                            <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/Archana.jpg" alt="Customer">
+                            <div><h4>Archanakumari Sharma</h4><span>Business Owner</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I gifted the collection box to my father and he was blown away. The packaging is elegant and the coffee speaks for itself."</p>
+                        <div class="testimonial-author">
+                            <img src="C:\Users\Soni Sharma\Desktop\men's coffee\image.jpg/de.jpg" alt="Customer">
+                            <div><h4>David Chen</h4><span>Verified Buyer</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Gallery -->
+        <section class="instagram section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-badge">@menscoffee</span>
+                    <h2>Follow Our Journey</h2>
+                    <p>Join our community of coffee lovers</p>
+                </div>
+                <div class="instagram-grid">
+                    <div class="instagram-item"><img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/jou1.jpg" alt="Coffee"><div class="instagram-overlay"><i class="fab fa-instagram"></i></div></div>
+                    <div class="instagram-item"><img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/jou2.jpg" alt="Coffee"><div class="instagram-overlay"><i class="fab fa-instagram"></i></div></div>
+                    <div class="instagram-item"><img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/jou3.jpg" alt="Coffee"><div class="instagram-overlay"><i class="fab fa-instagram"></i></div></div>
+                    <div class="instagram-item"><img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/jou4.jpg" alt="Coffee"><div class="instagram-overlay"><i class="fab fa-instagram"></i></div></div>
+                    <div class="instagram-item"><img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/jou5.jpg" alt="Coffee"><div class="instagram-overlay"><i class="fab fa-instagram"></i></div></div>
+                    <div class="instagram-item"><img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/date.jpg" alt="Coffee"><div class="instagram-overlay"><i class="fab fa-instagram"></i></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog section" id="blog">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Our Blog</span>
+                    <h2>Latest Articles</h2>
+                    <p>Insights, recipes, and coffee culture</p>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/latest.jpg" alt="Blog">
+                            <span class="blog-category">Brewing</span>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">July 1, 2024</span>
+                            <h3>The Ultimate Guide to Pour Over Coffee</h3>
+                            <p>Master the art of pour over brewing with our comprehensive guide covering technique, equipment, and tips.</p>
+                            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/lates1.jpg" alt="Blog">
+                            <span class="blog-category">Origins</span>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">June 28, 2024</span>
+                            <h3>Exploring Ethiopian Coffee Traditions</h3>
+                            <p>Discover the birthplace of coffee and the rich cultural traditions that make Ethiopian beans so special.</p>
+                            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="C:/Users/Soni Sharma/Desktop/men's coffee/image.jpg/latest2.jpg" alt="Blog">
+                            <span class="blog-category">Lifestyle</span>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">June 25, 2024</span>
+                            <h3>Creating the Perfect Morning Coffee Ritual</h3>
+                            <p>Transform your mornings with a mindful coffee ritual that sets the tone for a productive day.</p>
+                            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section class="faqs section" id="faqs">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">FAQs</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about our coffee</p>
+                </div>
+                <div class="faqs-container">
+                    <div class="faq-item">
+                        <div class="faq-question"><h4>How fresh is your coffee?</h4><i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p>We roast all our coffee to order, meaning your beans are roasted within 24-48 hours of your order. Coffee is at its peak freshness 2-14 days after roasting, which is exactly when it arrives at your door.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><h4>What's the difference between light, medium, and dark roast?</h4><i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p>Light roasts have a milder taste with more acidity and original bean flavors. Medium roasts offer balanced flavor, aroma, and acidity. Dark roasts have a bold, rich taste with lower acidity and more roasty notes.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><h4>How should I store my coffee?</h4><i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p>Store your coffee in an airtight container away from light, heat, and moisture. Our bags have one-way valves that keep coffee fresh. For best results, consume within 3-4 weeks of opening.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><h4>Do you offer subscriptions?</h4><i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p>Yes! Our subscription plans let you receive your favorite coffees automatically. Choose weekly, bi-weekly, or monthly delivery. Subscribers save 15% on every order and get access to exclusive beans.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><h4>What's your return policy?</h4><i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p>We offer a 100% satisfaction guarantee. If you're not happy with your coffee, contact us within 30 days for a full refund or exchange. No questions asked.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><h4>Where do you source your beans?</h4><i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p>We source directly from small farms and cooperatives in Ethiopia, Colombia, Brazil, Guatemala, and Indonesia. All our beans are fair trade certified and sustainably grown.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="trust section">
+            <div class="container">
+                <div class="trust-badges">
+                    <div class="trust-badge"><i class="fas fa-shield-alt"></i><span>Secure Payment</span></div>
+                    <div class="trust-badge"><i class="fas fa-truck"></i><span>Free Shipping</span></div>
+                    <div class="trust-badge"><i class="fas fa-undo"></i><span>Easy Returns</span></div>
+                    <div class="trust-badge"><i class="fas fa-headset"></i><span>24/7 Support</span></div>
+                    <div class="trust-badge"><i class="fas fa-leaf"></i><span>Eco-Friendly</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Join the Men's Coffee Club</h2>
+                        <p>Subscribe for exclusive offers, brewing tips, and early access to new roasts.</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Contact Us</span>
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="info-card"><i class="fas fa-map-marker-alt"></i><h4>Visit Us</h4><p>near krishna park chincholi,<br>Mumbai, M 400067</p></div>
+                        <div class="info-card"><i class="fas fa-phone"></i><h4>Call Us</h4><p>+91 9136293202</p></div>
+                        <div class="info-card"><i class="fas fa-envelope"></i><h4>Email Us</h4><p>sharmaarchana0775@gmail.com</p></div>
+                        <div class="info-card"><i class="fas fa-clock"></i><h4>Hours</h4><p>Mon-Fri: 9AM-6PM<br>Sat-Sun: 10AM-4PM</p></div>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/share/1H7nYLABVQ/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/mens__coffee?utm_source=qr&igsh=cTFlYXM0cm9tY3U1"><i class="fab fa-instagram"></i></a>
+                            <a href="https://x.com/ArchanaSha2005"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/@ArrchanaSharmaa"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" required></div>
+                                <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" required></div>
+                            </div>
+                            <div class="form-group"><label for="email">Email</label><input type="email" id="email" required></div>
+                            <div class="form-group"><label for="subject">Subject</label>
+                                <select id="subject">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="order">Order Support</option>
+                                    <option value="wholesale">Wholesale Inquiry</option>
+                                    <option value="feedback">Feedback</option>
+                                </select>
+                            </div>
+                            <div class="form-group"><label for="message">Message</label><textarea id="message" rows="5" required></textarea></div>
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2155739598493!2d-73.98823492426803!3d40.74881743559319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a6ae!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <button class="close-checkout" id="closeCheckout"><i class="fas fa-times"></i></button>
+            <div class="checkout-grid">
+                <div class="checkout-forms">
+                    <h2>Checkout</h2>
+                    <div class="checkout-tabs">
+                        <button class="checkout-tab active" data-tab="shipping">Shipping</button>
+                        <button class="checkout-tab" data-tab="payment">Payment</button>
+                    </div>
+                    <form id="checkoutForm">
+                        <div class="checkout-section" id="shippingSection">
+                            <h3>Shipping Information</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>First Name</label><input type="text" required></div>
+                                <div class="form-group"><label>Last Name</label><input type="text" required></div>
+                            </div>
+                            <div class="form-group"><label>Email</label><input type="email" required></div>
+                            <div class="form-group"><label>Address</label><input type="text" required></div>
+                            <div class="form-row">
+                                <div class="form-group"><label>City</label><input type="text" required></div>
+                                <div class="form-group"><label>ZIP Code</label><input type="text" required></div>
+                            </div>
+                            <div class="form-group"><label>Country</label>
+                                <select><option>United States</option><option>Canada</option><option>United Kingdom</option></select>
+                            </div>
+                        </div>
+                        <div class="checkout-section" id="paymentSection" style="display: none;">
+                            <h3>Payment Method</h3>
+                            <div class="payment-methods">
+                                <label class="payment-method"><input type="radio" name="payment" checked><span><i class="fab fa-cc-visa"></i> Credit Card</span></label>
+                                <label class="payment-method"><input type="radio" name="payment"><span><i class="fab fa-paypal"></i> PayPal</span></label>
+                            </div>
+                            <div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"></div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Expiry Date</label><input type="text" placeholder="MM/YY"></div>
+                                <div class="form-group"><label>CVV</label><input type="text" placeholder="123"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-items" id="summaryItems"></div>
+                    <div class="summary-totals">
+                        <div class="summary-row"><span>Subtotal</span><span class="summary-subtotal">$0.00</span></div>
+                        <div class="summary-row"><span>Shipping</span><span>Free</span></div>
+                        <div class="summary-row"><span>Tax</span><span class="summary-tax">$0.00</span></div>
+                        <div class="summary-row total"><span>Total</span><span class="summary-total">$0.00</span></div>
+                    </div>
+                    <button class="btn btn-primary btn-block" id="placeOrder">Place Order</button>
+                    <p class="secure-checkout"><i class="fas fa-lock"></i> Secure checkout powered by SSL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="quickview-modal" id="quickviewModal">
+        <div class="quickview-content">
+            <button class="close-quickview" id="closeQuickview"><i class="fas fa-times"></i></button>
+            <div class="quickview-grid">
+                <div class="quickview-image"><img id="quickviewImage" src="" alt=""></div>
+                <div class="quickview-details">
+                    <h2 id="quickviewName"></h2>
+                    <div class="quickview-rating" id="quickviewRating"></div>
+                    <div class="quickview-price">
+                        <span class="current-price" id="quickviewPrice"></span>
+                        <span class="original-price" id="quickviewOriginalPrice"></span>
+                    </div>
+                    <p class="quickview-description" id="quickviewDescription"></p>
+                    <div class="quickview-meta">
+                        <div class="meta-item"><span class="meta-label">Roast Level:</span><span id="quickviewRoast"></span></div>
+                        <div class="meta-item"><span class="meta-label">Flavor Notes:</span><span id="quickviewFlavor"></span></div>
+                        <div class="meta-item"><span class="meta-label">Strength:</span><span id="quickviewStrength"></span></div>
+                        <div class="meta-item"><span class="meta-label">Weight:</span><span id="quickviewWeight"></span></div>
+                    </div>
+                    <div class="quickview-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1" id="quickviewQty">
+                            <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <button class="btn btn-primary quickview-add-cart">Add to Cart</button>
+                        <button class="btn btn-secondary quickview-buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <div class="logo-icon"><span class="logo-m">M</span><div class="logo-coffee-bean"></div></div>
+                            <div class="logo-text"><span class="brand-name">Men's Coffee</span><span class="tagline">It doesn't mean what it says</span></div>
+                        </div>
+                        <p>Premium craft coffee for the modern gentleman. Experience excellence in every cup.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#shop">Shop</a></li>
+                            <li><a href="#collection">Collection</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#shop">Espresso</a></li>
+                            <li><a href="#shop">Latte</a></li>
+                            <li><a href="#shop">Cold Brew</a></li>
+                            <li><a href="#shop">Specialty</a></li>
+                            <li><a href="#shop">Gift Boxes</a></li>
+                            <li><a href="#shop">Subscriptions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#faqs">FAQs</a></li>
+                            <li><a href="#" id="privacyLink">Privacy Policy</a></li>
+                            <li><a href="#" id="termsLink">Terms & Conditions</a></li>
+                            <li><a href="#" id="shippingLink">Shipping & Delivery</a></li>
+                            <li><a href="#" id="refundLink">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Info</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> near krishna park chilcholi, M 400067</p>
+                        <p><i class="fas fa-phone"></i> +91 9136293202</p>
+                        <p><i class="fas fa-envelope">sharmaarchana0775@gmail.com</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Men's Coffee. All rights reserved. Crafted with passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/15551234567?text=Hello!%20I'm%20interested%20in%20your%20premium%20coffee%20collection.%20Can%20you%20help%20me%20choose%20the%20best%20coffee?" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Policy Modals -->
+    <div class="policy-modal" id="privacyModal">
+        <div class="policy-content">
+            <button class="close-policy" id="closePrivacy"><i class="fas fa-times"></i></button>
+            <h2>Privacy Policy</h2>
+            <div class="policy-text">
+                <p><strong>Effective Date:</strong> January 1, 2024</p>
+                <h3>1. Information We Collect</h3>
+                <p>We collect information you provide directly, such as name, email, and shipping address when you make a purchase or contact us.</p>
+                <h3>2. How We Use Your Information</h3>
+                <p>We use your information to process orders, send updates, improve our services, and communicate with you about products and promotions.</p>
+                <h3>3. Data Security</h3>
+                <p>We implement appropriate security measures to protect your personal information from unauthorized access or disclosure.</p>
+                <h3>4. Cookies</h3>
+                <p>We use cookies to enhance your browsing experience and analyze site traffic.</p>
+                <h3>5. Your Rights</h3>
+                <p>You have the right to access, correct, or delete your personal information. Contact us at privacy@menscoffee.com.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="policy-modal" id="termsModal">
+        <div class="policy-content">
+            <button class="close-policy" id="closeTerms"><i class="fas fa-times"></i></button>
+            <h2>Terms & Conditions</h2>
+            <div class="policy-text">
+                <p><strong>Effective Date:</strong> January 1, 2024</p>
+                <h3>1. Agreement to Terms</h3>
+                <p>By accessing or using our website, you agree to be bound by these Terms and Conditions.</p>
+                <h3>2. Products and Pricing</h3>
+                <p>All products are subject to availability. Prices may change without notice. We reserve the right to limit quantities.</p>
+                <h3>3. Orders and Payment</h3>
+                <p>We reserve the right to refuse or cancel any order. Payment must be received before orders are shipped.</p>
+                <h3>4. Intellectual Property</h3>
+                <p>All content on this website is owned by Men's Coffee and protected by copyright laws.</p>
+                <h3>5. Limitation of Liability</h3>
+                <p>We are not liable for any indirect or consequential damages arising from your use of our products or services.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="policy-modal" id="shippingModal">
+        <div class="policy-content">
+            <button class="close-policy" id="closeShipping"><i class="fas fa-times"></i></button>
+            <h2>Shipping & Delivery</h2>
+            <div class="policy-text">
+                <h3>Processing Time</h3>
+                <p>Orders are processed within 1-2 business days. Coffee is roasted fresh after your order is placed.</p>
+                <h3>Shipping Methods</h3>
+                <p>We offer standard shipping (3-5 business days) and express shipping (1-2 business days).</p>
+                <h3>Free Shipping</h3>
+                <p>Enjoy free standard shipping on all orders over $50.</p>
+                <h3>International Shipping</h3>
+                <p>We currently ship to the United States, Canada, and select international destinations. Additional fees may apply.</p>
+                <h3>Tracking</h3>
+                <p>Once your order ships, you'll receive a tracking number via email.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="policy-modal" id="refundModal">
+        <div class="policy-content">
+            <button class="close-policy" id="closeRefund"><i class="fas fa-times"></i></button>
+            <h2>Refund & Return Policy</h2>
+            <div class="policy-text">
+                <h3>100% Satisfaction Guarantee</h3>
+                <p>If you're not completely satisfied with your purchase, we'll make it right.</p>
+                <h3>Return Window</h3>
+                <p>You may return unopened products within 30 days of purchase for a full refund.</p>
+                <h3>How to Return</h3>
+                <p>Contact us at returns@menscoffee.com with your order number. We'll provide a prepaid shipping label.</p>
+                <h3>Refund Process</h3>
+                <p>Refunds are processed within 5-7 business days after we receive your return. You'll be notified via email.</p>
+                <h3>Exchanges</h3>
+                <p>Prefer to exchange? Let us know and we can help you find the perfect replacement.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
